@@ -21,7 +21,7 @@ public class JAXB {
 	
 	
 	// ----------------------------------------------Funktionen-----------------------------------------------
-	/** Erzeugt ein XML File mit der übergebenen Klasse und speichert es im Sourcepfad
+	/** Erzeugt ein XML File mit der übergebenen Klasse und speichert es im Sourcepfad.
 	 * @param terminkalender
 	 * @throws JAXBException
 	 */
@@ -35,16 +35,21 @@ public class JAXB {
 		jaxbMarshaller.marshal(terminkalender, output);
 	}
 	
+	
+	
 	/** liest eine XML-Datei ein und übergibt die Daten an die vorbereitete Klasse.
 	 * @param inputFile: die XML Datei, die eingelsen werden soll.
+	 * @return terminkalenderXML: Die Daten des XML sind für diese Klasse vorgesehen und werde daher so zurückgegeben.
 	 * @throws JAXBException
 	 */
-//	public void leseXML(File inputFile) throws JAXBException{
-//		// Welche Klassen sollen mit Daten aus dem XML abgefüllt werden?
-//		JAXBContext jaxbContext = JAXBContext.newInstance(Terminkalender.class, Termin.class, Besitzer.class);
-//		Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-//		Terminkalender terminkalender = (Terminkalender)jaxbUnmarshaller.unmarshal(inputFile);
-//	}
+	public Terminkalender leseXML(File inputFile) throws JAXBException{
+		// Welche Klassen sollen mit Daten aus dem XML abgefüllt werden?
+		Terminkalender terminkalenderXML = new Terminkalender();
+		JAXBContext jaxbContext = JAXBContext.newInstance(Terminkalender.class, Termin.class, Besitzer.class);
+		Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+		terminkalenderXML = (Terminkalender)jaxbUnmarshaller.unmarshal(inputFile);
+		return terminkalenderXML;
+	}
 		
 	//----------------------------------------------Getter- / Setter------------------------------------------
 	

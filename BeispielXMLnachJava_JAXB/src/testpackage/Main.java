@@ -17,27 +17,27 @@ public class Main {
 		// ----------------------------------------------Felder---------------------------------------------------
 		Terminkalender terminkalender = new Terminkalender();
 		Besitzer besitzer = new Besitzer();
-//		besitzer.setName("Schrödinger");
+		besitzer.setName("Schrödinger");
 		Termin termin = new Termin();
 		List<Termin> terminListe = new ArrayList<Termin>();
 		
-//		termin.setWann("20:19");
-//		termin.setWas("DSDS gufffcken oder so...");
-//		termin.setWo("im Wohnzimmer");
-//		terminListe.add(termin);
-//		
-//		Termin termin2 = new Termin();
-//		termin2.setWas("Roland testen");
-//		besitzer.setName("Toland");
-//		termin2.setWann("kleiner test");
-//		termin2.setWo("hier");
-//		terminListe.add(termin2);
-//		
-//		terminkalender.setTermin(terminListe);
-//		terminkalender.setBesitzer(besitzer);
-//		
+		termin.setWann("20:19");
+		termin.setWas("DSDS gufffcken oder so...");
+		termin.setWo("im Wohnzimmer");
+		terminListe.add(termin);
+		
+		Termin termin2 = new Termin();
+		termin2.setWas("Roland testen");
+		besitzer.setName("Toland");
+		termin2.setWann("kleiner test");
+		termin2.setWo("hier");
+		terminListe.add(termin2);
+		
+		terminkalender.setTermin(terminListe);
+		terminkalender.setBesitzer(besitzer);
+		
 		JAXB jaxb = new JAXB();
-		System.out.println("Programm Ende....");
+
 
 			
 		// ----------------------------------------------Konstruktor----------------------------------------------
@@ -47,20 +47,19 @@ public class Main {
 		
 		// ----------------------------------------------Funktionen-----------------------------------------------
 
-		// Zum Erstellen des XML:
+		// Zum Erstellen des XML gem. den Daten von Oben:
 //		jaxb.erstelleXML(terminkalender);
 		
-		// Zum einlesen von Daten:
+		// Zum einlesen der XML-Daten aus dem Testfile.xml:
 		File inputFile = new File(".\\Testfile.xml");
-//		jaxb.leseXML(inputFile);
-		JAXBContext jaxbContext = JAXBContext.newInstance(Terminkalender.class, Termin.class, Besitzer.class);
-		Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-		Terminkalender terminkalenderXML = (Terminkalender)jaxbUnmarshaller.unmarshal(inputFile);
+		Terminkalender terminkalenderXML = new Terminkalender();
 		
+		terminkalenderXML = jaxb.leseXML(inputFile);
 		
+		// die vom XML an die Klassen übergebenen Daten können nun abgerufen werden:
 		System.out.println(terminkalenderXML.getBesitzer().getName());
 		System.out.println("Anzahl Termine: "+ terminkalenderXML.getTermin().size());
-		System.out.println("Termin nummer 3: "+ terminkalenderXML.getTermin().get(2).getWas());
+		System.out.println("Termin nummer 2: "+ terminkalenderXML.getTermin().get(1).getWas());
 		
 			
 		//----------------------------------------------Getter- / Setter------------------------------------------

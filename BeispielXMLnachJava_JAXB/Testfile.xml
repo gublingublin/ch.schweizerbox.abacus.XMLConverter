@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <terminkalender>
     <besitzer>
-        <name>Todafdadsland</name>
+        <name>Toland</name>
     </besitzer>
     <termin>
         <wann>20:19</wann>
@@ -13,10 +13,4 @@
         <was>Roland testen</was>
         <wo>hier</wo>
     </termin>
-    <termin>
-        <wann>dritter Termin</wann>
-        <was>Java programmieren</was>
-        <wo>am PC</wo>
-    </termin>
-
 </terminkalender>
