@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<terminkalender>
+    <besitzer>
+        <name>Todafdadsland</name>
+    </besitzer>
+    <termin>
+        <wann>20:19</wann>
+        <was>DSDS gufffcken oder so...</was>
+        <wo>im Wohnzimmer</wo>
+    </termin>
+    <termin>
+        <wann>kleiner test</wann>
+        <was>Roland testen</was>
+        <wo>hier</wo>
+    </termin>
+    <termin>
+        <wann>dritter Termin</wann>
+        <was>Java programmieren</was>
+        <wo>am PC</wo>
+    </termin>
+
+</terminkalender>
