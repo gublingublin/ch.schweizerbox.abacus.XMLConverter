@@ -1,7 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-	
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.DesignController">
-	<!-- TODO Add Nodes -->
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="513.0" prefWidth="576.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presenter.DesignController">
+   <children>
+      <TabPane layoutX="-182.0" layoutY="-184.0" prefHeight="513.0" prefWidth="576.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Programm" />
+          <Tab text="Einstellungen">
+               <content>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <VBox layoutX="14.0" layoutY="14.0" prefHeight="42.0" prefWidth="535.0">
+                           <children>
+                              <Text fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="Quelldatei" />
+                              <TextField fx:id="TF_Quelldatei" prefHeight="25.0" prefWidth="504.0" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="14.0" layoutY="75.0" prefHeight="42.0" prefWidth="535.0">
+                           <children>
+                              <Text fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="Zieldatei" />
+                              <TextField fx:id="TF_Zieldatei" prefHeight="25.0" prefWidth="491.0" />
+                           </children>
+                        </VBox>
+                        <CheckBox fx:id="CHB_DatenArchivieren" layoutX="16.0" layoutY="154.0" mnemonicParsing="false" text="Daten archivieren" />
+                        <VBox layoutX="14.0" layoutY="187.0" prefHeight="42.0" prefWidth="535.0">
+                           <children>
+                              <Text fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="Archivordner" />
+                              <TextField fx:id="TF_Archivordner" prefHeight="25.0" prefWidth="491.0" />
+                           </children>
+                        </VBox>
+                        <Button fx:id="BTN_Speichern" layoutX="16.0" layoutY="252.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="112.0" text="Speichern" />
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
 </AnchorPane>
