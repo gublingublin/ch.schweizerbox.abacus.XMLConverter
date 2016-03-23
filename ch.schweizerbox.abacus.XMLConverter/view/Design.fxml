@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="513.0" prefWidth="576.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presenter.DesignController">
+<AnchorPane prefHeight="513.0" prefWidth="576.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.DesignController">
    <children>
       <TabPane layoutX="-182.0" layoutY="-184.0" prefHeight="513.0" prefWidth="576.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
@@ -38,7 +38,7 @@
                               <TextField fx:id="TF_Archivordner" prefHeight="25.0" prefWidth="491.0" />
                            </children>
                         </VBox>
-                        <Button fx:id="BTN_Speichern" layoutX="16.0" layoutY="252.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="112.0" text="Speichern" />
+                        <Button fx:id="BTN_Speichern" layoutX="16.0" layoutY="252.0" mnemonicParsing="false" onAction="#saveDataEinstellungen" prefHeight="33.0" prefWidth="112.0" text="Speichern" />
                      </children>
                   </Pane>
                </content>
