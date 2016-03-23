@@ -31,8 +31,8 @@
                               <TextField fx:id="TF_Zieldatei" prefHeight="25.0" prefWidth="491.0" />
                            </children>
                         </VBox>
-                        <CheckBox fx:id="CHB_DatenArchivieren" layoutX="16.0" layoutY="154.0" mnemonicParsing="false" text="Daten archivieren" />
-                        <VBox layoutX="14.0" layoutY="187.0" prefHeight="42.0" prefWidth="535.0">
+                        <CheckBox fx:id="CHB_DatenArchivieren" layoutX="16.0" layoutY="154.0" mnemonicParsing="false" onAction="#setArchivordnervisible" text="Daten archivieren" />
+                        <VBox fx:id="VB_Archivordner" layoutX="14.0" layoutY="174.0" prefHeight="42.0" prefWidth="535.0" visible="false">
                            <children>
                               <Hyperlink onAction="#openFileChooserArchivordner" text="Archivordner" />
                               <TextField fx:id="TF_Archivordner" prefHeight="25.0" prefWidth="491.0" />

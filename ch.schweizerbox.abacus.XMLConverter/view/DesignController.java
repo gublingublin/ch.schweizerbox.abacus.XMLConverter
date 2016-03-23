@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 import model.SaveLoadData;
 
 public class DesignController {
@@ -17,7 +18,11 @@ public class DesignController {
 	@FXML TextField TF_Zieldatei;
 	@FXML TextField TF_Archivordner;
 	@FXML CheckBox CHB_DatenArchivieren; 
+	@FXML VBox VB_Archivordner;
 
+	// -----------------------------------------------Listener------------------------------------------------
+	
+	
 	
 	// ----------------------------------------------Funktionen-----------------------------------------------
 		
@@ -42,5 +47,15 @@ public class DesignController {
 	public void openFileChooserArchivordner(){
 		RBFileChooser rbFileChooser = new RBFileChooser(TF_Archivordner, 2);
 	}
+	
+	@FXML
+	public void setArchivordnervisible(){
+		boolean aktiv = CHB_DatenArchivieren.isSelected();
+		if(aktiv == false){
+			VB_Archivordner.setVisible(false);
+		} else {
+			VB_Archivordner.setVisible(true);
+		}
+		}
 	
 }
