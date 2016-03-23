@@ -2,13 +2,13 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="513.0" prefWidth="576.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.DesignController">
    <children>
@@ -21,20 +21,20 @@
                      <children>
                         <VBox layoutX="14.0" layoutY="14.0" prefHeight="42.0" prefWidth="535.0">
                            <children>
-                              <Text fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="Quelldatei" />
+                              <Hyperlink onAction="#openFileChooserQuelldatei" text="Quelldatei" />
                               <TextField fx:id="TF_Quelldatei" prefHeight="25.0" prefWidth="504.0" />
                            </children>
                         </VBox>
                         <VBox layoutX="14.0" layoutY="75.0" prefHeight="42.0" prefWidth="535.0">
                            <children>
-                              <Text fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="Zieldatei" />
+                              <Hyperlink onAction="#openFileChooserZieldatei" text="Zieldatei" />
                               <TextField fx:id="TF_Zieldatei" prefHeight="25.0" prefWidth="491.0" />
                            </children>
                         </VBox>
                         <CheckBox fx:id="CHB_DatenArchivieren" layoutX="16.0" layoutY="154.0" mnemonicParsing="false" text="Daten archivieren" />
                         <VBox layoutX="14.0" layoutY="187.0" prefHeight="42.0" prefWidth="535.0">
                            <children>
-                              <Text fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="Archivordner" />
+                              <Hyperlink onAction="#openFileChooserArchivordner" text="Archivordner" />
                               <TextField fx:id="TF_Archivordner" prefHeight="25.0" prefWidth="491.0" />
                            </children>
                         </VBox>

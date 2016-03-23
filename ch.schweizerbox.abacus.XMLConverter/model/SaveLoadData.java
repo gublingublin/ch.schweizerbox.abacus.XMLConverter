@@ -33,7 +33,7 @@ public class SaveLoadData {
 	 */
 	public void speichereDaten(String quellDatei, String zielDatei, String archivOrdner) throws FileNotFoundException, IOException{
 		DataEinstellungen.setQuellDatei(quellDatei);
-		System.out.println(DataEinstellungen.getQuellDatei());
+//		System.out.println(DataEinstellungen.getQuellDatei());
 		DataEinstellungen.setZielDatei(zielDatei);
 		DataEinstellungen.setArchivOrdner(archivOrdner);
 		try(
