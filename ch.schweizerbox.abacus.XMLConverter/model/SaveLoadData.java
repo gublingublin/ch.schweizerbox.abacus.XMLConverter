@@ -15,7 +15,7 @@ import javafx.scene.chart.PieChart.Data;
 public class SaveLoadData {
 
 	// ----------------------------------------------Felder---------------------------------------------------
-		DataEinstellungen DataEinstellungen = new DataEinstellungen();
+		DataEinstellungen dataEinstellungen = new DataEinstellungen();
 				
 		
 		
@@ -32,15 +32,15 @@ public class SaveLoadData {
 	 * @throws IOException
 	 */
 	public void speichereDaten(String quellDatei, String zielDatei, String archivOrdner) throws FileNotFoundException, IOException{
-		DataEinstellungen.setQuellDatei(quellDatei);
+		dataEinstellungen.setQuellDatei(quellDatei);
 //		System.out.println(DataEinstellungen.getQuellDatei());
-		DataEinstellungen.setZielDatei(zielDatei);
-		DataEinstellungen.setArchivOrdner(archivOrdner);
+		dataEinstellungen.setZielDatei(zielDatei);
+		dataEinstellungen.setArchivOrdner(archivOrdner);
 		try(
 				OutputStream dateiSchreiber = new FileOutputStream("DataEinstellungen.data");
 				ObjectOutputStream objektSchreiber = new ObjectOutputStream(dateiSchreiber)
 			) {
-				objektSchreiber.writeObject(DataEinstellungen);
+				objektSchreiber.writeObject(dataEinstellungen);
 				objektSchreiber.flush();
 //				System.out.println("Daten gespeichert!");
 			}
