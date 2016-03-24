@@ -11,10 +11,12 @@ public class RBFileChooser{
 	
 // ----------------------------------------------Konstruktoren----------------------------------------------
 	/** Zeigt einen FileChooser an in welchem Files oder Ordner ausgewählt werden können.
-	 * @param Eingabefeld = Wo soll der Pfad hingeschrieben werden?
-	 * @param FileChooserTyp: 
-	 * 			1: Auswahl einer Datei
-	 * 			2: Auswahl eines Ordners
+	 * @param Eingabefeld: Wo soll der Pfad hingeschrieben werden?
+	 * @param FileChooserTyp: Welcher Typ des Filechosser wird gewünscht? 
+	 * 						1: Datei auswählen
+	 * 						2: Ordner auswhählen
+	 * 						3: Datei speichern
+	 *
 	 */
 	public RBFileChooser(TextField Eingabefeld, int FileChooserTyp){
 		switch (FileChooserTyp) {
@@ -40,7 +42,17 @@ public class RBFileChooser{
 			Eingabefeld.setText(selectedDirectory.getAbsolutePath());
 			}
 			break;
-		
+
+		case 3:
+			FileChooser fileChooserSave = new FileChooser();
+			fileChooserSave.setTitle("Speichere Datei unter...");
+			fileChooserSave.getExtensionFilters().add(new ExtensionFilter("XML Datei", "*.XML"));
+			File selectedFileSave = fileChooserSave.showSaveDialog(null);
+			if (selectedFileSave != null) {
+			Eingabefeld.setText(selectedFileSave.getAbsolutePath());
+			}
+			break;
+			 
 		default:
 			System.out.println("Es wurde kein FileChooserTyp ausgewählt. Bitte Angaben machen!");
 			break;
