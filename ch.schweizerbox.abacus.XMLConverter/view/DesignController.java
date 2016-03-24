@@ -2,6 +2,7 @@ package view;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import javax.swing.JOptionPane;
 import controller.RBFileChooser;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -13,13 +14,14 @@ import model.SaveLoadData;
 public class DesignController {
 
 	// ----------------------------------------------Felder---------------------------------------------------
-	@FXML Button BTN_Speichern;
-	@FXML TextField TF_Quelldatei;
-	@FXML TextField TF_Zieldatei;
-	@FXML TextField TF_Archivordner;
-	@FXML CheckBox CHB_DatenArchivieren; 
-	@FXML VBox VB_Archivordner;
+	@FXML private Button BTN_Speichern;
+	@FXML private TextField TF_Quelldatei;
+	@FXML private TextField TF_Zieldatei;
+	@FXML private TextField TF_Archivordner;
+	@FXML private CheckBox CHB_DatenArchivieren; 
+	@FXML private VBox VB_Archivordner;
 
+	
 	// -----------------------------------------------Listener------------------------------------------------
 	
 	
@@ -27,9 +29,16 @@ public class DesignController {
 	// ----------------------------------------------Funktionen-----------------------------------------------
 		
 	@FXML
+	public void test(){
+		System.out.println("loooooos");
+	}
+	
+	
+	@FXML
 	public void saveDataEinstellungen() throws FileNotFoundException, IOException{
 		SaveLoadData saveLoadData = new SaveLoadData();
 		saveLoadData.speichereDaten(TF_Quelldatei.getText(), TF_Zieldatei.getText(), TF_Archivordner.getText());
+		JOptionPane.showMessageDialog(null, "Die Daten wurden gespeichert.");
 //		System.out.println(TF_Quelldatei.getText());
 	}
 
@@ -57,5 +66,8 @@ public class DesignController {
 			VB_Archivordner.setVisible(true);
 		}
 		}
+
+
+	
 	
 }
