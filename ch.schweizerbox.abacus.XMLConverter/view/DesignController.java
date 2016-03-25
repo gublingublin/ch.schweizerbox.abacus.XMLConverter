@@ -23,7 +23,7 @@ public class DesignController {
 	// ----------------------------------------------Felder---------------------------------------------------
 	@FXML private Button BTN_Speichern;
 	@FXML private Button BTN_Testbutton;
-	@FXML private static TextField TF_Quelldatei;
+	@FXML private TextField TF_Quelldatei;
 	@FXML public static TextField TF_Testfeld;
 	@FXML private TextField TF_Zieldatei;
 	@FXML private TextField TF_Archivordner;
@@ -34,12 +34,14 @@ public class DesignController {
 	
 	// -----------------------------------------------Listener------------------------------------------------
 	
-	@FXML
+	
     public void initialize() throws FileNotFoundException, ClassNotFoundException, IOException { 
-		System.out.println("hallo welt");
-		saveLoadData.leseDaten();
-//		TF_Quelldatei.setText(saveLoadData.leseDaten().getQuellDatei());
-		
+//		System.out.println("hallo welt");
+		TF_Quelldatei.setText(saveLoadData.leseDaten().getQuellDatei());
+		TF_Zieldatei.setText(saveLoadData.leseDaten().getZielDatei());
+		TF_Archivordner.setText(saveLoadData.leseDaten().getArchivOrdner());
+		CHB_DatenArchivieren.setSelected(saveLoadData.leseDaten().getDatenArchivieren());
+		setArchivordnervisible();
 	}
 	
 	
@@ -69,12 +71,12 @@ public class DesignController {
 	
 	
 	public void test(){
-		System.out.println("test...");
+		
 	}
 	
 	
 	public void saveDataEinstellungen() throws FileNotFoundException, IOException{
-		saveLoadData.speichereDaten(TF_Quelldatei.getText(), TF_Zieldatei.getText(), TF_Archivordner.getText());
+		saveLoadData.speichereDaten(TF_Quelldatei.getText(), TF_Zieldatei.getText(), TF_Archivordner.getText(), CHB_DatenArchivieren.isSelected());
 		JOptionPane.showMessageDialog(null, "Die Daten wurden gespeichert.");
 //		System.out.println(TF_Quelldatei.getText());
 	}

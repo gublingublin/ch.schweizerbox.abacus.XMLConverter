@@ -8,6 +8,7 @@ public class DataEinstellungen implements Serializable {
 	private String quellDatei = "";
 	private String zielDatei = "";
 	private String archivOrdner = "";
+	private Boolean datenArchivieren;
 	
 	
 	
@@ -39,5 +40,11 @@ public class DataEinstellungen implements Serializable {
 	}
 	public void setArchivOrdner(String archivOrdner) {
 		this.archivOrdner = archivOrdner;
+	}
+	public Boolean getDatenArchivieren() {
+		return datenArchivieren;
+	}
+	public void setDatenArchivieren(Boolean datenArchivieren) {
+		this.datenArchivieren = datenArchivieren;
 	}
 }

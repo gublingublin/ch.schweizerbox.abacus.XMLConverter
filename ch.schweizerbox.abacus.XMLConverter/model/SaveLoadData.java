@@ -31,11 +31,12 @@ public class SaveLoadData {
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
-	public void speichereDaten(String quellDatei, String zielDatei, String archivOrdner) throws FileNotFoundException, IOException{
+	public void speichereDaten(String quellDatei, String zielDatei, String archivOrdner, Boolean datenArchivieren) throws FileNotFoundException, IOException{
 		dataEinstellungen.setQuellDatei(quellDatei);
 //		System.out.println(DataEinstellungen.getQuellDatei());
 		dataEinstellungen.setZielDatei(zielDatei);
 		dataEinstellungen.setArchivOrdner(archivOrdner);
+		dataEinstellungen.setDatenArchivieren(datenArchivieren);
 		try(
 				OutputStream dateiSchreiber = new FileOutputStream("DataEinstellungen.data");
 				ObjectOutputStream objektSchreiber = new ObjectOutputStream(dateiSchreiber)
@@ -61,7 +62,7 @@ public class SaveLoadData {
 				ObjectInputStream objektLeser = new ObjectInputStream(dateiLeser)
 				) {
 				DataEinstellungen geleseneDaten = (DataEinstellungen) objektLeser.readObject();
-//				System.out.println(geleseneDaten.getFeld1());
+//				System.out.println(geleseneDaten.getArchivOrdner());
 				return geleseneDaten;
 			} 
 	}
